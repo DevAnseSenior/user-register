@@ -5,4 +5,5 @@ from app_reg_users import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('users/', views.users, name='list_users'),
 ]
