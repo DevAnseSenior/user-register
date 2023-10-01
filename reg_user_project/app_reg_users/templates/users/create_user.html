@@ -4,6 +4,7 @@
   {% csrf_token %}
   <div class="container text-center">
     <h1>Users Register</h1>
+    {% include './messages.html' %}
     Name <input class="form-control-sm" type="text" name="name">
     Age <input class="form-control-sm" type="text" name="age">
     <button class="form-control-sm">Send</button>

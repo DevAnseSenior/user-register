@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import User
-from django.http import HttpResponse
+from django.contrib import messages
+
 
 def home(request):
     users = {
@@ -17,8 +18,9 @@ def create_user(request):
 
         if not User.objects.filter(name=new_user.name):
             new_user.save()
+            messages.success(request, f"User registered successfully!")
         else:
-            print('user exists')
+            messages.error(request, f"Error, user already registered", "danger")
 
 
     return render(request, 'users/create_user.html')
